@@ -33,8 +33,8 @@ char* Department::getName()
 
 void Department::ReadData(char depname[100], int depcode)
 {
-	strcpy_s(Name, depname);
-	Code = depcode;
+	setName(depname);
+	setCode(depcode);
 }
 
 void Department::PrintInfo()
@@ -59,13 +59,9 @@ void Employee::setName(char * ename)
 		delete[] Name;
 		Name = NULL;
 	}
-	if (Name != NULL)
-	{
-		int length = strlen(ename);
-		length = (length < 100 ? length : 99);
-		strcpy_s(Name, length, ename);
-	}
-
+	int length = strlen(ename)+1;
+	Name = new char[length];
+	strcpy_s(Name, length, ename);
 }
 
 void Employee::setAge(int eage)
@@ -108,11 +104,12 @@ void Employee::PrintInfo()
 	}
 
 	cout << "Age:" << Age << endl;
-	if (Name != NULL)
+	if (dep -> getName() != NULL)
 	cout << "Department: " << dep->getName() << endl;
 	cout << "Salary: " << Salary << endl;
 }
 Employee :: ~Employee()
 {
 	cout << "Employee Destructor is Called." << endl;
+	delete[] Name;
 }
