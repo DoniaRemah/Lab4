@@ -106,7 +106,20 @@ void Employee::PrintInfo()
 	cout << "Age:" << Age << endl;
 	if (dep -> getName() != NULL)
 	cout << "Department: " << dep->getName() << endl;
+	else
+	{
+		cout << "Department: Unspecified " << endl;
+	}
 	cout << "Salary: " << Salary << endl;
+}
+int Employee::GetDepCode()
+{
+	if (dep != NULL)
+		return dep->getcode();
+	else
+	{
+		return 0;
+	}
 }
 Employee :: ~Employee()
 {

@@ -38,5 +38,6 @@ public:
 	char* getName();
 	int getAge();
 	void setAge(int eAge);
+	int GetDepCode();
 	~Employee();
 };
