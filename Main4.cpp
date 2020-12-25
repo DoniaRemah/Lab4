@@ -43,7 +43,7 @@ int main ()
 	Earr[1] = &E2;
 	Earr[2] = &E3;
 	cout << "Count Staff of Department 10: "<< CountEmployees(10, Earr,3) << endl;
-	cout << "Count Staff of Department 20: " << CountEmployees(20, Earr, 3) << endl;
+	cout << "Count Staff of Department 20: " << CountEmployees(30, Earr, 3) << endl;
 	E1.Leave();
 	cout << "Count Staff of Department 10: " << CountEmployees(10, Earr, 3) << endl;
 	E1.PrintInfo();
